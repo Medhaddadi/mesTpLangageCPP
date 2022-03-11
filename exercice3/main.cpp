@@ -6,7 +6,10 @@
 using namespace std;
 int main()
 {
-    cout<<"hello ";
+   Matrice m(3,2);
+   //m.affiche();
+   Matrice T(m);
+   T.affiche();
     return 0;
 }
 

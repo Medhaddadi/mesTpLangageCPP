@@ -4,6 +4,9 @@
 
 #ifndef EXERCICE_2_MATRICE_H
 #define EXERCICE_2_MATRICE_H
+#include <iostream>
+
+using namespace std;
 class Matrice{
     typedef double *ligne;
     ligne *Line;
