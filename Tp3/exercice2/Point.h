@@ -4,7 +4,8 @@
 
 #ifndef EXERCICE_2_POINT_H
 #define EXERCICE_2_POINT_H
-
+#include <iostream>
+using namespace std;
 
 class Point {
  int x,y;
@@ -13,7 +14,12 @@ public:
     void identifie();
     void affiche();
 };
-
+class PointCol:public Point
+{
+    int coul;
+public:
+    PointCol(int ,int ,int );
+};
 
 
 #endif //EXERCICE_2_POINT_H
