@@ -3,11 +3,12 @@
 //
 
 #include "Point.h"
+
 Point::Point(int abs, int ord) {
     x=abs;
     y=ord;
 }
-void identifie()
+void Point::identifie()
 {
     cout<<"je suis un point ";
 }
@@ -17,4 +18,16 @@ void Point::affiche() {
 }
 PointCol::PointCol(int abs, int ord, int color): Point(abs,ord) {
     coul=color;
+}
+void PointCol::identifie() {
+    cout<<"je suis un point de color :"<<coul<<endl;
+}
+float PointCol::rho() {
+    return sqrt(getabs()*getabs()+getord()*getord());
+}
+int Point::getabs() {
+    return x;
+}
+int Point::getord() {
+    return y;
 }

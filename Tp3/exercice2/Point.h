@@ -6,12 +6,16 @@
 #define EXERCICE_2_POINT_H
 #include <iostream>
 using namespace std;
-
+#include <cmath>
 class Point {
  int x,y;
+/*protected:
+    int x,y;*/
 public:
+    int getabs();
+    int getord();
     Point(int abs,int ord);
-    void identifie();
+    virtual void identifie();
     void affiche();
 };
 class PointCol:public Point
@@ -19,6 +23,8 @@ class PointCol:public Point
     int coul;
 public:
     PointCol(int ,int ,int );
+    void identifie();
+    float rho();
 };
 
 
