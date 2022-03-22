@@ -20,5 +20,6 @@ public:
     Matrice &operator *=(Matrice &);
     void remplirMatrice();
     void affiche();
+
 };
 #endif //EXERCICE_2_MATRICE_H

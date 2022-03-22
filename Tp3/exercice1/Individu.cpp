@@ -1,18 +1,23 @@
 //
 // Created by mohamed el haddadi on 3/12/2022.
 //
-
+#include "exercice2.h"
 #include "Individu.h"
+
 Individu::Individu(const Individu &person) {
     age=person.age;
     nom=person.nom;
     prenom=person.prenom;
 }
-
-string Individu::getNom() {
+Individu::Individu(String nom1, String prenom1, int age1) {
+    nom=nom1;
+    prenom=prenom1;
+    age=age1;
+}
+String Individu::getNom() {
     return nom;
 }
-string  Individu::getPrenom() {
+String  Individu::getPrenom() {
     return prenom;
 }
 int Individu::getAge()
@@ -20,14 +25,14 @@ int Individu::getAge()
     return age;
 }
 
-string Etudiant::getFiliere() {return filiere;}
-string Etudiant::getNiveau() {return niveau;}
-Individu::Individu(string nom1, string prenom1, int age1) {
-    nom=nom1;
-    prenom=prenom1;
-    age=age1;
+void Individu::affichage(){
+    cout<<"Nom:"<<nom<<endl;
+    cout<<"Prenom:"<<prenom<<endl;
+    cout<<"age:"<<age<<endl;
 }
-Etudiant::Etudiant(string Nom, string Prenom, int Age, string Niveau, string Filiere): Individu(Nom,Prenom,Age) {
+String Etudiant::getFiliere() {return filiere;}
+String Etudiant::getNiveau() {return niveau;}
+Etudiant::Etudiant(String Nom, String Prenom, int Age, String Niveau, String Filiere): Individu(Nom,Prenom,Age) {
     niveau=Niveau;
     filiere=Filiere;
 }
@@ -35,6 +40,7 @@ Etudiant::Etudiant(Etudiant &etudiant1): Individu(etudiant1) {
    niveau=etudiant1.niveau;
    filiere=etudiant1.filiere;
 }
+ist
  ostream& operator<<(ostream &os, Etudiant &et1 ){
      os<<"le Nom   : "<<et1.getNom()<<endl;
      os<<"le Prenom: "<<et1.getPrenom()<<endl;

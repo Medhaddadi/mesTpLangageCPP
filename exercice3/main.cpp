@@ -10,6 +10,8 @@ int main()
    //m.affiche();
    Matrice T(m);
    T.affiche();
+   T.remplirMatrice();
+   T.affiche();
     return 0;
 }
 

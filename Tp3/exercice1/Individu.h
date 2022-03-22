@@ -10,23 +10,39 @@ using namespace std;
 class Individu {
 private:
     int age;
-    string nom;
-    string prenom;
+    String nom;
+    String prenom;
 public:
-    Individu(string nom="",string prenom="",int age=0);
+    Individu(String nom="",String prenom="",int age=0);
     Individu(const Individu &);
-    string getNom();
-    string getPrenom();
+    String getNom();
+    String getPrenom();
     int getAge();
+    void affichage();
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Etudiant:public Individu{
 private:
-    string niveau;
-    string filiere;
+    String niveau;
+    String filiere;
 public:
-    string getNiveau();
-    string getFiliere();
-    Etudiant(string Nom,string Prenom ,int Age,string Niveau="",string Filiere="");
+    String getNiveau();
+    String getFiliere();
+    Etudiant(String Nom,String Prenom ,int Age,String Niveau="",String Filiere="");
     Etudiant(Etudiant &);
     friend ostream& operator<<(ostream &, Etudiant & );
 };

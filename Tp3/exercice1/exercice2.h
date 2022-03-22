@@ -23,8 +23,11 @@ public:
     String & operator+=(const String &);
     String & operator+=(const char *);
     String & operator+=(const char );
-    String &operator+(const String &);
+    String operator+(const String &);
     char & operator[](UNIT);
+    int isIn(const String & );
+    String operator*(const String&);
+    String operator-(const String&);
     UNIT tailleStr(const char *);
     friend ostream& operator<<(ostream &,const String&);
     bool isEmpty();

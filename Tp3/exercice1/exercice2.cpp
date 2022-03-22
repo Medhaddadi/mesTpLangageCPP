@@ -49,7 +49,26 @@ bool String::operator==(const String &string1) {
     }
     return true;
 }
+/*int  String::isIn(String &ch){
+    int comp=0;
+    for (int i = 0; i < taille ; ++i) {
+      if(chaine[i]==ch.chaine[i])
+      {
 
+      }
+    }
+}*/
+String String::operator-(const String &ch) {
+    int i=0;
+    while (i<taille)
+    {
+
+        for (int j = i; j < ch.taille+i; ++j) {
+
+        }
+        i=i+1;
+    }
+}
 String &String::operator+=(const String &string1) {
     for (UNIT  i = 0; i <string1.taille ; ++i) {
       chaine[taille++]=string1.chaine[i];
@@ -58,8 +77,6 @@ String &String::operator+=(const String &string1) {
 }
  ostream& operator<<(ostream &os,const String &mot )
 {
-    os<<"la taille est :"<<mot.taille<<endl;
-    os<<"le mot est : ";
     for (int i = 0; i < mot.taille; ++i) {
         os<<mot.chaine[i];
     }
@@ -77,7 +94,7 @@ String & String::operator+=(const char *str)
 String & String::operator+=(const char c ){
     chaine[taille++]=c;
 }
-String  &String::operator+(const String &string1) {
+String  String::operator+(const String &string1) {
     String string2;
     for (UNIT i = 0; i < taille; ++i) {
         string2.chaine[i]=chaine[i];
