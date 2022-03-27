@@ -40,7 +40,16 @@ Etudiant::Etudiant(Etudiant &etudiant1): Individu(etudiant1) {
    niveau=etudiant1.niveau;
    filiere=etudiant1.filiere;
 }
-ist
+istream& operator>>(istream &is ,Etudiant &e)
+{
+
+    is >> e.getAge();
+    is>>e.getFiliere();
+    is>>
+
+
+    return is ;
+}
  ostream& operator<<(ostream &os, Etudiant &et1 ){
      os<<"le Nom   : "<<et1.getNom()<<endl;
      os<<"le Prenom: "<<et1.getPrenom()<<endl;

@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 struct element {
-    void *contenu;
+     void  *contenu;
     element *suivant;
 };
 class liste {
@@ -23,6 +23,7 @@ public:
     void *premier();
     void *prochain();
     int fini();
+    void affichage();
 };
 
 

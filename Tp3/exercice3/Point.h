@@ -8,9 +8,8 @@
 using namespace std;
 #include <cmath>
 class Point {
- int x,y;
-/*protected:
-    int x,y;*/
+protected:
+    int x,y;
 public:
     int getabs();
     int getord();

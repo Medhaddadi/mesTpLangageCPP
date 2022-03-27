@@ -21,25 +21,12 @@ public:
     void affichage();
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Etudiant:public Individu{
 private:
     String niveau;
     String filiere;
 public:
+    friend istream& operator>>(istream & ,Etudiant &);
     String getNiveau();
     String getFiliere();
     Etudiant(String Nom,String Prenom ,int Age,String Niveau="",String Filiere="");

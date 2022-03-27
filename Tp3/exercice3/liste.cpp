@@ -3,15 +3,22 @@
 //
 
 #include "liste.h"
+#include "Point.h"
 liste::liste() {
     debut=NULL;
     courant=NULL;
 }
 liste::~liste() {
-    delete debut;
-    delete courant;
-}
+    element *suiv;
+    courant=debut;
+    while (courant!=NULL)
+    {
+        suiv=courant;
+        courant=courant->suivant;
+        delete suiv;
+    }
 
+}
 int liste::getSize() {
     int i=0;
     element*tmp=debut;
@@ -25,8 +32,8 @@ int liste::getSize() {
 void liste::ajouter(void *n) {
     element *nvElem=new element;
     nvElem->contenu=n;
-    nvElem->suivant=courant;
-    courant=nvElem;
+    nvElem->suivant=debut;
+    debut=nvElem;
 }
 liste& liste::operator=(liste &l) {
     element *tmp=l.debut;
@@ -48,8 +55,28 @@ bool liste::empty() {
         return false;
 }
 void * liste::premier() {
-    return debut;
+    courant=debut;
+    if(courant!=NULL)
+       return (courant->contenu);
+    else
+        return NULL;
 }
 void * liste::prochain() {
-
+  if(courant!=NULL)
+  {
+      courant=courant->suivant;
+      return courant->contenu;
+  }
+  return NULL;
 }
+int  liste::fini() {
+    if (courant==NULL)
+        return 1;
+    else
+        return 0;
+}
+class listePoint:public liste,public Point
+{
+public:
+    void affiche();
+};

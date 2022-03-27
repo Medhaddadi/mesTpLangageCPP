@@ -1,11 +1,11 @@
 //
 // Created by mohamed el haddadi on 3/12/2022.
 //
-#include "Point.h"
+#include "mesTpLangageCPP/Tp3/exercice3/Point.h"
 int main()
 {
-    PointCol x1(2,3,4);
-    cout<<x1.rho();
-    x1.identifie();
+    PointCol *x1=new PointCol(2,3,4);
+    x1->identifie();
+    cout<<x1->rho();
     return 0;
 }
