@@ -13,18 +13,17 @@ protected:
 public:
     int getabs();
     int getord();
-    Point(int abs,int ord);
-    virtual void identifie();
+    Point(int =0,int =0);
     void affiche();
 };
-class PointCol:public Point
+/*class PointCol:public Point
 {
     int coul;
 public:
     PointCol(int ,int ,int );
     void identifie();
     float rho();
-};
+};*/
 
 
 #endif //EXERCICE_2_POINT_H

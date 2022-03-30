@@ -31,8 +31,8 @@ int liste::getSize() {
 }
 void liste::ajouter(void *n) {
     element *nvElem=new element;
-    nvElem->contenu=n;
     nvElem->suivant=debut;
+    nvElem->contenu=n;
     debut=nvElem;
 }
 liste& liste::operator=(liste &l) {
@@ -55,11 +55,12 @@ bool liste::empty() {
         return false;
 }
 void * liste::premier() {
-    courant=debut;
+    return this->debut->contenu;
+   /* courant=debut;
     if(courant!=NULL)
        return (courant->contenu);
     else
-        return NULL;
+        return NULL;*/
 }
 void * liste::prochain() {
   if(courant!=NULL)
@@ -75,8 +76,5 @@ int  liste::fini() {
     else
         return 0;
 }
-class listePoint:public liste,public Point
-{
-public:
-    void affiche();
-};
+
+

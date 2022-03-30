@@ -5,12 +5,14 @@
 #ifndef EXERCICE_2_LISTE_H
 #define EXERCICE_2_LISTE_H
 #include <iostream>
+#include "Point.h"
 using namespace std;
 struct element {
      void  *contenu;
     element *suivant;
 };
 class liste {
+protected:
   element* debut;
   element*courant;
 public:
@@ -23,8 +25,7 @@ public:
     void *premier();
     void *prochain();
     int fini();
-    void affichage();
-};
 
+};
 
 #endif //EXERCICE_2_LISTE_H
