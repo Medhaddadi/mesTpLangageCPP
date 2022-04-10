@@ -33,10 +33,11 @@ typedef struct listeEt{
 };
 class Etudiant:public Personne
 {
+protected:
     listeEt *matiere;
 public:
     Etudiant();
-    Etudiant(String ,String,UIN,listeEt*);
+    Etudiant(String ,String,UIN);
     void ajouterMat(String ,float );
     void affichage();
     ~Etudiant();
@@ -50,13 +51,19 @@ typedef struct listeEn{
 };
 class Enseignant:public Personne
 {
+protected:
     listeEn *matiereP;
 public:
     Enseignant();
-    Enseignant(String ,String,UIN,listeEn*);
+    Enseignant(String ,String,UIN);
     void ajouterMatP(String ,int );
     void affichage();
     int TotalHeure();
     ~Enseignant();
+};
+class Appreciation:public Enseignant,public Etudiant{
+    string  commentaire;
+public:
+
 };
 #endif //EXERCICE_2_PERSONNE_H

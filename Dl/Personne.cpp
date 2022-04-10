@@ -7,6 +7,8 @@
 
 Personne::Personne() {
     age=0;
+    nom=" ";
+    prenom=" r";
 }
 Personne::Personne(String Nom, String Prenom, UIN n) {
         nom=Nom;
@@ -41,18 +43,8 @@ Personne & Personne::operator=(const Personne & p1)
 Etudiant::Etudiant() {
     matiere=NULL;
 }
-Etudiant::Etudiant(String Nom, String Prenom, UIN n, listeEt *mat) :Personne(Nom,Prenom,n){
-    matiere=mat;
- /*   while (courant!=NULL)
-    {
-        listeEt *newListe=new listeEt;
-        newListe->matiere=courant->matiere;
-        newListe->note=courant->taille;
-        newListe->next=matiere;
-        matiere=newListe;
-        matiere->taille++;
-        courant=courant->next;
-    }*/
+Etudiant::Etudiant(String Nom, String Prenom, UIN n) :Personne(Nom,Prenom,n){
+    matiere=NULL;
 
 }
 
@@ -60,9 +52,20 @@ void Etudiant::ajouterMat(String NomMAt,float notMat) {
     listeEt *newListe=new listeEt;
     newListe->matiere=NomMAt;
     newListe->note=notMat;
-    newListe->next=matiere;
-    matiere=newListe;
-    matiere->taille++;
+    newListe->next=NULL;
+    listeEt *tmp=matiere;
+    if (matiere==NULL)
+        matiere=newListe;
+    else
+    {
+        while (tmp->next!=NULL)
+        {
+            tmp=tmp->next;
+        }
+        tmp->next=newListe;
+        matiere->taille++;
+    }
+
 }
 
 float Etudiant::moyen() {
@@ -89,6 +92,7 @@ void Etudiant::affichage() {
         cout<<tmp->matiere<<"| "<<tmp->note<<endl;
         tmp=tmp->next;
     }
+    cout<<"sa moyenne :"<< this->moyen()<<endl<<endl;
 }
 Etudiant::~Etudiant() {
     listeEt *tmp=matiere;
@@ -113,8 +117,8 @@ Enseignant::~Enseignant() {
         tmp=t;
     }
 }
-Enseignant::Enseignant(String Nom, String Prenom, UIN n, listeEn *mat) :Personne(Nom,Prenom,n) {
-    matiereP = mat;
+Enseignant::Enseignant(String Nom, String Prenom, UIN n) :Personne(Nom,Prenom,n) {
+    matiereP=NULL;
 }
 
 void Enseignant::ajouterMatP(String NomMAt,int nbh) {
@@ -137,6 +141,7 @@ void Enseignant::affichage() {
         cout<<tmp->matiere<<"| "<<tmp->nbMatiere<<endl;
         tmp=tmp->next;
     }
+    cout<<"total d'heure :"<<this->TotalHeure()<<endl<<endl;
 }
 
 int Enseignant::TotalHeure() {
