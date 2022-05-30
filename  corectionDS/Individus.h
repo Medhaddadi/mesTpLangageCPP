@@ -88,7 +88,7 @@ public:
     }
 };
 const int File::lmax=10;
-class Epicerie:public File{
+class Epicerie:public virtual File{
     int stockPaquetPates;
 public:
     Epicerie():File(){stockPaquetPates=100;}
@@ -96,15 +96,18 @@ public:
         stockPaquetPates--;
     }
 };
-class Pharmacie:public File{
+class Pharmacie:public virtual File{
     int stockGelHydroAlco;
 public:
     Pharmacie():File(){stockGelHydroAlco=1;}
     void operator--(){
         stockGelHydroAlco--;
     }
+    void stockAffiche(){
+
+    }
 };
-class SuperMarcher:virtual public Pharmacie,virtual public Epicerie{
+class SuperMarcher: public  Pharmacie, public  Epicerie{
 public:
     SuperMarcher():Pharmacie(),Epicerie(){};
 };

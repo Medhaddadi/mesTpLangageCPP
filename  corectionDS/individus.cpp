@@ -15,5 +15,12 @@ int main(){
     file.afficher();
     --file;
     file.afficher();
+    SuperMarcher s;
+    s+p2;
+    s+p3;
+    s+p;
+    s.afficher();
+
+
     return 0;
 }
